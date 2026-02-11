@@ -1,0 +1,54 @@
+[project]
+name = "amrita-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "amrita-core>=0.4.1",
+    "flet[all]==0.28.3",
+    "markdown>=3.10.2",
+    "tomli>=2.4.0",
+    "tomli-w>=1.2.0",
+    "typing-extensions>=4.15.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/AmritaBot/AmritaAgent"
+"Source" = "https://github.com/AmritaBot/AmritaAgent"
+"Issue Tracker" = "https://github.com/AmritaBot/AmritaAgent/issues"
+
+
+[project.scripts]
+amrita-agent = "amrita_agent.__main__:entry"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.setuptools.packages.find]
+include = ["amrita_agent", "amrita_agent.*"]
+
+[tool.ruff.lint]
+select = [
+    "F",     # Pyflakes
+    "W",     # pycodestyle warnings
+    "E",     # pycodestyle errors
+    "UP",    # pyupgrade
+    "ASYNC", # flake8-async
+    "C4",    # flake8-comprehensions
+    "T10",   # flake8-debugger
+    "PYI",   # flake8-pyi
+    "PT",    # flake8-pytest-style
+    "Q",     # flake8-quotes
+    "RUF",   # Ruff-specific rules
+    "I",     # isort
+    "PERF",  # pylint-performance
+]
+ignore = [
+    "E501",   # line-too-long
+    "UP037",  # quoted-annotation
+    "RUF001", # ambiguous-unicode-character-string
+    "RUF002", # ambiguous-unicode-character-docstring
+    "RUF003", # ambiguous-unicode-character-comment
+]
